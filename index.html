@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Your Online Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <!-- Logo -->
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">ShopEasy</span>
+                        </a>
+                    </div>
+                    <!-- Primary Nav -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold">Home</a>
+                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Products</a>
+                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</a>
+                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+                    </div>
+                </div>
+                <!-- Secondary Nav -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">
+                        <i class="fas fa-user"></i> Log In
+                    </a>
+                    <a href="#" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">
+                        <i class="fas fa-sign-in-alt"></i> Sign Up
+                    </a>
+                    <button id="cart-btn" class="py-2 px-2 relative">
+                        <i class="fas fa-shopping-cart text-gray-500 hover:text-green-500 transition duration-300"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-green-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-500 hover:text-green-500"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-green-500 hover:text-white">Home</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-green-500 hover:text-white">Products</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-green-500 hover:text-white">About</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-green-500 hover:text-white">Contact</a>
+            <div class="py-2 px-4">
+                <a href="#" class="block text-center py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">
+                    <i class="fas fa-user"></i> Log In
+                </a>
+                <a href="#" class="block text-center py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300 mt-2">
+                    <i class="fas fa-sign-in-alt"></i> Sign Up
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to ShopEasy</h1>
+                    <p class="text-lg text-gray-600 mb-6">Discover amazing products at unbeatable prices. Shop now and enjoy fast delivery right to your doorstep.</p>
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Shop Now
+                    </button>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Hero Image" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Featured Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Product cards will be inserted here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
+        <div class="p-4">
+            <div class="flex justify-between items-center border-b pb-4">
+                <h3 class="text-xl font-bold">Your Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="py-4">
+                <!-- Cart items will be inserted here -->
+                <p class="text-gray-500 text-center py-8">Your cart is empty</p>
+            </div>
+            <div class="border-t pt-4">
+                <div class="flex justify-between mb-4">
+                    <span class="font-semibold">Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">ShopEasy</h3>
+                    <p class="text-gray-400">Your one-stop shop for all your needs. Quality products at affordable prices.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Returns & Refunds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <address class="text-gray-400 not-italic">
+                        <p>123 Shop Street</p>
+                        <p>Retail City, RC 12345</p>
+                        <p class="mt-2">Email: info@shopeasy.com</p>
+                        <p>Phone: (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 ShopEasy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
